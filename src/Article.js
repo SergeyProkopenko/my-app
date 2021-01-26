@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Comments from "./Comments";
-//import Comments from "./Comments";
+import PropTypes from 'prop-types';
 
 export default class Article extends Component {
 
@@ -32,10 +32,8 @@ export default class Article extends Component {
             <div>
                 <section>{article.text}</section>
                 <Comments comments={article.comments}/>
-                {/*{this.getComments()}*/}
             </div>;
     };
-
 
     toggleOpen = () => {
         this.setState({
@@ -43,3 +41,11 @@ export default class Article extends Component {
         })
     }
 }
+
+Article.propTypes = {
+    article: PropTypes.shape({
+        id: PropTypes.isRequired,
+        title: PropTypes.string.isRequired,
+        text: PropTypes.string,
+    }).isRequired,
+};

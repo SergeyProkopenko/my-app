@@ -4,7 +4,6 @@ import {articles} from "./fixtures";
 
 
 class App extends Component {
-
     render() {
         return (
             <Articles articles={articles}/>

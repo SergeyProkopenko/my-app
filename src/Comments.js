@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Comment from "./Comment";
+import PropTypes from 'prop-types';
 
 export default class Comments extends Component {
 
@@ -17,7 +18,7 @@ export default class Comments extends Component {
 
         return (
             <div>
-                {comments ? <button onClick={this.toggleOpen}>{!isOpen ? "Open comments" : "Close comments"}</button> : null}
+                {comments.length ? <button onClick={this.toggleOpen}>{!isOpen ? "Open comments" : "Close comments"}</button> : null}
                 {this.getComments()}
             </div>
         );
@@ -32,6 +33,9 @@ export default class Comments extends Component {
     getComments = () => {
         const {isOpen} = this.state;
         const {comments} = this.props;
+
+        if(!comments.length) return <p>No comments yet</p>;
+
         if(isOpen) {
             return(
                 <ul>
@@ -49,3 +53,11 @@ export default class Comments extends Component {
         }
     };
 }
+
+Comments.defaultProps = {
+    comments: []
+};
+
+Comments.propTypes = {
+    comments: PropTypes.array
+};

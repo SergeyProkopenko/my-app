@@ -1,8 +1,8 @@
 import React from 'react';
 import Article from "./Article";
+import PropTypes from 'prop-types';
 
 export default function Articles({articles}) {
-
     return (
         <ul>
             {articles.map(article => {
@@ -15,3 +15,7 @@ export default function Articles({articles}) {
         </ul>
     );
 }
+
+Articles.propTypes = {
+    articles: PropTypes.array
+};
