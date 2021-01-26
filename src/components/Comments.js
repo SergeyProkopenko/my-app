@@ -3,7 +3,7 @@ import Comment from "./Comment";
 import PropTypes from 'prop-types';
 import toggleOpen from "../decorators/toggleOpen";
 
-function Comments({comments, isOpen, toggleOpen}) {
+function Comments({comments = [], isOpen, toggleOpen}) {
 
     const getComments = () => {
         if (!isOpen) return null;
@@ -24,10 +24,6 @@ function Comments({comments, isOpen, toggleOpen}) {
         </div>
     );
 }
-
-Comments.defaultProps = {
-    comments: []
-};
 
 Comments.propTypes = {
     comments: PropTypes.array

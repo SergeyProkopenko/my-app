@@ -1,11 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Comments from "./Comments";
 import PropTypes from 'prop-types';
-import toggleOpen from "../decorators/toggleOpen";
 
-function Article({article, isOpen, toggleOpen}) {
-
-    const getBody = () => {
+class Article extends Component {
+    getBody = () => {
+        const {article, isOpen} = this.props;
         return !isOpen ? null :
             <div>
                 <section>{article.text}</section>
@@ -13,15 +12,19 @@ function Article({article, isOpen, toggleOpen}) {
             </div>;
     };
 
-    return (
-        <div>
-            <h3>{article.title}</h3>
-            <button onClick={toggleOpen}>
-                {isOpen ? "Close article" : "Open article"}
-            </button>
-            {getBody()}
-        </div>
-    );
+    render() {
+        const {article, isOpen, toggleOpen} = this.props;
+        return (
+            <div>
+                <h3>{article.title}</h3>
+                <button onClick={toggleOpen}>
+                    {isOpen ? "Close article" : "Open article"}
+                </button>
+                {this.getBody()}
+            </div>
+        );
+    }
+
 }
 
 Article.propTypes = {
@@ -32,4 +35,4 @@ Article.propTypes = {
     }).isRequired,
 };
 
-export default toggleOpen(Article);
+export default Article;
