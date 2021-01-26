@@ -7,9 +7,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>
-                <Articles articles={articles}/>
-            </div>
+            <Articles articles={articles}/>
         );
     }
 }
