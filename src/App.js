@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Articles from "./Articles";
+import Articles from "./components/Articles";
 import {articles} from "./fixtures";
 
 
