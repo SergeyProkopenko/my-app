@@ -26,7 +26,9 @@ function Comments({comments = [], isOpen, toggleOpen}) {
 }
 
 Comments.propTypes = {
-    comments: PropTypes.array
+    comments: PropTypes.array,
+    isOpen: PropTypes.bool,
+    toggleOpen: PropTypes.func
 };
 
 export default toggleOpen(Comments);

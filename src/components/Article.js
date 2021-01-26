@@ -13,18 +13,17 @@ class Article extends Component {
     };
 
     render() {
-        const {article, isOpen, toggleOpen} = this.props;
+        const {article, isOpen, toggle} = this.props;
         return (
             <div>
                 <h3>{article.title}</h3>
-                <button onClick={toggleOpen}>
+                <button onClick={toggle}>
                     {isOpen ? "Close article" : "Open article"}
                 </button>
                 {this.getBody()}
             </div>
         );
     }
-
 }
 
 Article.propTypes = {
@@ -33,6 +32,8 @@ Article.propTypes = {
         title: PropTypes.string.isRequired,
         text: PropTypes.string,
     }).isRequired,
+    isOpen: PropTypes.bool,
+    toggleOpen: PropTypes.func,
 };
 
 export default Article;
