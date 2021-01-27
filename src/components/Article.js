@@ -1,25 +1,32 @@
 import React, {Component} from 'react';
 import Comments from "./Comments";
 import PropTypes from 'prop-types';
+import {Button} from "antd";
 
 class Article extends Component {
     getBody = () => {
         const {article, isOpen} = this.props;
         return !isOpen ? null :
+
             <div>
-                <section>{article.text}</section>
+                <section className={'section'}>{article.text}</section>
                 <Comments comments={article.comments}/>
-            </div>;
+            </div>
+
     };
+
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        return nextProps.isOpen !== this.props.isOpen;
+    }
 
     render() {
         const {article, isOpen, toggle} = this.props;
         return (
             <div>
                 <h3>{article.title}</h3>
-                <button onClick={toggle}>
+                <Button onClick={toggle}>
                     {isOpen ? "Close article" : "Open article"}
-                </button>
+                </Button>
                 {this.getBody()}
             </div>
         );

@@ -2,6 +2,7 @@ import React from 'react';
 import Comment from "./Comment";
 import PropTypes from 'prop-types';
 import toggleOpen from "../decorators/toggleOpen";
+import {Button} from "antd";
 
 function Comments({comments = [], isOpen, toggleOpen}) {
 
@@ -19,7 +20,7 @@ function Comments({comments = [], isOpen, toggleOpen}) {
     return (
         <div>
             {comments.length ?
-                <button onClick={toggleOpen}>{!isOpen ? "Open comments" : "Close comments"}</button> : null}
+                <Button onClick={toggleOpen}>{!isOpen ? "Open comments" : "Close comments"}</Button> : null}
             {getComments()}
         </div>
     );
