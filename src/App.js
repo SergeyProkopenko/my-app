@@ -3,7 +3,7 @@ import Articles from "./components/Articles";
 import {articles} from "./fixtures";
 import 'react-day-picker/lib/style.css';
 import {DatePicker} from "antd";
-import ArticleForm from "./components/ArticleForm";
+import CommentForm from "./components/CommentForm";
 import './App.css'
 const {RangePicker} = DatePicker;
 
@@ -18,7 +18,7 @@ class App extends Component {
 
         return (
             <div className='container'>
-                <ArticleForm />
+                <CommentForm />
                 <RangePicker
                     format={"DD.MM.YYYY"}
                     onCalendarChange={this.onChangeHandler}

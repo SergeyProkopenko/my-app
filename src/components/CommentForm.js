@@ -10,7 +10,7 @@ const tailLayout = {
     wrapperCol: {offset: 8, span: 16},
 };
 
-export default class ArticleForm extends Component {
+export default class CommentForm extends Component {
 
     onFinish(values) {
         console.log('Success:', values);
