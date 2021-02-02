@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import Articles from "./components/Articles";
-import {articles} from "./fixtures";
+//import {articles} from "./fixtures";
 import 'react-day-picker/lib/style.css';
 import {DatePicker} from "antd";
-import CommentForm from "./components/CommentForm";
 import './App.css'
-import Counter from "./components/Counter";
+
 const {RangePicker} = DatePicker;
 
 class App extends Component {
@@ -18,14 +17,15 @@ class App extends Component {
     render() {
 
         return (
-            <div className='container'>
-                <Counter />
+            <div>
+                {/*<Counter />*/}
                 {/*<CommentForm />*/}
                 {/*<RangePicker*/}
                 {/*    format={"DD.MM.YYYY"}*/}
                 {/*    onCalendarChange={this.onChangeHandler}*/}
                 {/*/>*/}
                 {/*<Articles articles={articles.filter(article => new Date(article.date) > this.state.from && new Date (article.date) < this.state.to)}/>*/}
+                <Articles />
             </div>
         );
     }
