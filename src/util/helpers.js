@@ -1,0 +1,1 @@
+export const replaceIdToKey = arr => arr.map(x => ({...x, key: x.id}));

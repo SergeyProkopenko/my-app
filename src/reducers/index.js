@@ -1,10 +1,9 @@
 import {combineReducers} from "redux";
-import {counterReducer} from "./counter";
-import {articlesReducer} from "./articlesReducer";
+import {userReducer} from "./userReducer";
+
 
 const appReducer = combineReducers({
-    counter: counterReducer,
-    articles: articlesReducer
+    user: userReducer,
 });
 
 export const rootReducer = (state, action) => {
