@@ -11,6 +11,7 @@ export default class UserTableComponent extends Component {
     }
 
     render() {
+
         const {data, isLoading} = this.props;
         return (
             <>
