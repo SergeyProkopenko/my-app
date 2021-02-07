@@ -1,10 +1,12 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 
 export const userTableColumns = [
         {
             title: 'Name',
             dataIndex: 'name',
             key: 'name',
+            render: (text, record) => <NavLink to={`/users/${record.id}`}>{text}</NavLink>
         },
         {
             title: 'Username',

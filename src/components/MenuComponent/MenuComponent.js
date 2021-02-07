@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Menu} from 'antd';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 export default class MenuComponent extends Component {
     state = {
@@ -15,10 +15,10 @@ export default class MenuComponent extends Component {
         return (
             <Menu onClick={this.handleClick} mode="horizontal">
                 <Menu.Item key="home" >
-                    <Link to="/">Home</Link>
+                    <NavLink to="/">Home</NavLink>
                 </Menu.Item>
                 <Menu.Item key="users" >
-                    <Link to="/users">Users</Link>
+                    <NavLink to="/users">Users</NavLink>
                 </Menu.Item>
             </Menu>
         );
